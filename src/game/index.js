@@ -6,7 +6,7 @@ import { assetMapper, initialState } from './utils';
 import { Tile } from '../tile';
 import { GameWrapper } from './styles';
 
-export const Game = () => {
+export const Game = ({ setAttempts }) => {
   const [gameTiles] = useState(shuffle(Object.keys(initialState)));
   const [gameState, setGameState] = useState(cloneDeep(initialState));
   const [opens, setOpens] = useState([]);
@@ -15,6 +15,8 @@ export const Game = () => {
     if (opens.length >= 2) return; // prevent more than 2 open tiles
     if (opens[0] === id) return; // prevent self click
     if (gameState[id].isFound) return; // prevent click on found tile
+
+    setAttempts((prev) => ++prev);
 
     setOpens((prevOpens) => [...prevOpens, id]);
 
