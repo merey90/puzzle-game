@@ -1,24 +1,25 @@
-import { GameWrapper, Tile } from './styles';
+import { Tile } from '../tile';
+import { GameWrapper } from './styles';
+import * as dog from './assets/dog.json';
+import * as cat from './assets/cat.json';
+import * as ball from './assets/ball.json';
+import * as car from './assets/car.json';
+import * as bus from './assets/bus.json';
+import * as iceCream from './assets/ice-cream.json';
+import * as tree from './assets/tree.json';
+import * as bicycle from './assets/bicycle.json';
 
 export const Game = () => {
   return (
     <GameWrapper>
-      <Tile>1</Tile>
-      <Tile>2</Tile>
-      <Tile>3</Tile>
-      <Tile>4</Tile>
-      <Tile>5</Tile>
-      <Tile>6</Tile>
-      <Tile>7</Tile>
-      <Tile>8</Tile>
-      <Tile>9</Tile>
-      <Tile>10</Tile>
-      <Tile>11</Tile>
-      <Tile>12</Tile>
-      <Tile>13</Tile>
-      <Tile>14</Tile>
-      <Tile>15</Tile>
-      <Tile>16</Tile>
+      <Tile asset={dog} />
+      <Tile asset={cat} />
+      <Tile asset={ball} />
+      <Tile asset={car} />
+      <Tile asset={bus} />
+      <Tile asset={iceCream} />
+      <Tile asset={tree} />
+      <Tile asset={bicycle} />
     </GameWrapper>
   );
 };
