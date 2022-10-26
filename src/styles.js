@@ -5,6 +5,7 @@ export const StyledApp = styled.div`
   height: 100vh;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 10px;
 `;
 
 export const StyledHeader = styled.div`

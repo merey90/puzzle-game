@@ -14,36 +14,42 @@ export const Game = () => {
   const [opens, setOpens] = useState([]);
 
   const handleTileClick = (id) => {
-    if (opens.length >= 2) return;
-    console.log('opens1: ', opens);
+    if (opens.length >= 2) return; // prevent more than 2 open tiles
+    if (opens[0] === id) return; // prevent self click
+    if (gameState[id].isFound) return; // prevent click on found tile
 
     setOpens((prevOpens) => [...prevOpens, id]);
-    const tile = gameState[id];
 
-    console.log('opens2: ', opens);
-
-    let found = false;
-
-    if (opens[0] && opens[0].name === tile.name) {
-      found = true;
-    }
-
-    if (!found)
+    if (opens[0] && gameState[opens[0]].name === gameState[id].name) {
       setGameState((prevState) => ({
         ...prevState,
         [id]: {
-          ...tile,
-          isOpen: !tile.isOpen,
+          ...prevState[id],
+          isFound: true,
+          isOpen: false,
+        },
+        [opens[0]]: {
+          ...prevState[opens[0]],
+          isFound: true,
+          isOpen: false,
         },
       }));
+      setOpens([]);
+      return;
+    }
 
-    if (opens.length >= 1 && !found)
+    setGameState((prevState) => ({
+      ...prevState,
+      [id]: {
+        ...prevState[id],
+        isOpen: true,
+      },
+    }));
+
+    if (opens.length >= 1)
       setTimeout(() => {
         closeAll();
       }, 2000);
-    if (found) {
-      setOpens([]);
-    }
   };
 
   const closeAll = () => {

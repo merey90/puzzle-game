@@ -2,8 +2,8 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import styled from '@emotion/styled';
 
 export const TileWrapper = styled.div`
-  width: 25vw;
-  height: 25vw;
+  width: 25%;
+  height: 25%;
   padding: 3px;
   display: flex;
   align-items: center;
