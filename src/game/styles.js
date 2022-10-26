@@ -3,6 +3,6 @@ import styled from '@emotion/styled';
 export const GameWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: calc(100vw - 20px);
-  height: calc(100vw - 20px);
+  width: calc(min(100vw, 100vh) - 20px);
+  height: calc(min(100vw, 100vh) - 20px);
 `;
