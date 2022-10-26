@@ -1,25 +1,19 @@
 import { Tile } from '../tile';
+import shuffle from 'lodash/shuffle';
+import cloneDeep from 'lodash/cloneDeep';
+
 import { GameWrapper } from './styles';
-import * as dog from './assets/dog.json';
-import * as cat from './assets/cat.json';
-import * as ball from './assets/ball.json';
-import * as car from './assets/car.json';
-import * as bus from './assets/bus.json';
-import * as iceCream from './assets/ice-cream.json';
-import * as tree from './assets/tree.json';
-import * as bicycle from './assets/bicycle.json';
+import { assetMapper, initialState } from './utils';
 
 export const Game = () => {
+  const gameTiles = shuffle(Object.keys(initialState));
+  const gameState = cloneDeep(initialState);
+
   return (
     <GameWrapper>
-      <Tile asset={dog} />
-      <Tile asset={cat} />
-      <Tile asset={ball} />
-      <Tile asset={car} />
-      <Tile asset={bus} />
-      <Tile asset={iceCream} />
-      <Tile asset={tree} />
-      <Tile asset={bicycle} />
+      {gameTiles.map((tile) => (
+        <Tile key={tile} asset={assetMapper[tile]} state={gameState[tile]} />
+      ))}
     </GameWrapper>
   );
 };
