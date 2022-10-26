@@ -27,25 +27,25 @@ export const assetMapper = {
 };
 
 const tileInitialState = {
-  open: false,
-  found: false,
+  isOpen: false,
+  isFound: false,
 };
 
 export const initialState = {
-  ball1: { ...tileInitialState },
-  dog1: { ...tileInitialState },
-  cat1: { ...tileInitialState },
-  bus1: { ...tileInitialState },
-  iceCream1: { ...tileInitialState },
-  tree1: { ...tileInitialState },
-  bicycle1: { ...tileInitialState },
-  car1: { ...tileInitialState },
-  ball2: { ...tileInitialState },
-  dog2: { ...tileInitialState },
-  cat2: { ...tileInitialState },
-  bus2: { ...tileInitialState },
-  iceCream2: { ...tileInitialState },
-  tree2: { ...tileInitialState },
-  bicycle2: { ...tileInitialState },
-  car2: { ...tileInitialState },
+  ball1: { ...tileInitialState, name: 'ball' },
+  dog1: { ...tileInitialState, name: 'dog' },
+  cat1: { ...tileInitialState, name: 'cat' },
+  bus1: { ...tileInitialState, name: 'bus' },
+  iceCream1: { ...tileInitialState, name: 'iceCream' },
+  tree1: { ...tileInitialState, name: 'tree' },
+  bicycle1: { ...tileInitialState, name: 'bicycle' },
+  car1: { ...tileInitialState, name: 'car' },
+  ball2: { ...tileInitialState, name: 'ball' },
+  dog2: { ...tileInitialState, name: 'dog' },
+  cat2: { ...tileInitialState, name: 'cat' },
+  bus2: { ...tileInitialState, name: 'bus' },
+  iceCream2: { ...tileInitialState, name: 'iceCream' },
+  tree2: { ...tileInitialState, name: 'tree' },
+  bicycle2: { ...tileInitialState, name: 'bicycle' },
+  car2: { ...tileInitialState, name: 'car' },
 };
