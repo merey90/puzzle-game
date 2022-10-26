@@ -7,9 +7,7 @@ import { Tile } from '../tile';
 import { GameWrapper } from './styles';
 
 export const Game = () => {
-  const [gameTiles, setGameTiles] = useState(
-    shuffle(Object.keys(initialState))
-  );
+  const [gameTiles] = useState(shuffle(Object.keys(initialState)));
   const [gameState, setGameState] = useState(cloneDeep(initialState));
   const [opens, setOpens] = useState([]);
 
